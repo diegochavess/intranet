@@ -29,7 +29,25 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+                    $("#new").validate({
+                        rules:{
+                            email:{
+                                required: true
+                            },
+                            novasenha:{
+                                required: true,
+                                minlenght: 8
+                            }
+                        },
+                        
+                        submitHandler: function (form) {
+                        $.notify("Senha Alterada com Sucesso!", "success")
+                    }
+                    })
+        })
+    </script>
 </head>
 
 <body>
@@ -42,22 +60,23 @@
                         <h3 class="panel-collapse">Mercadinho Santa Izabel</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="login">
+                        <form role="form" id="new">
                             <fieldset>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" name="email" id="email" type="email" autofocus>
+                                    <input class="form-control" placeholder="E-mail" id="email" name="email" type="email" autofocus>
                                 </div>
                                 <div class="form-group">
-                                    <input class="form-control" placeholder="Senha" id="senha" name="password" type="password" value="">
+                                    <input class="form-control" placeholder="Nova Senha" id="novasenha" name="password" type="password" value="">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Digite Novamente a Senha" id="novasenha" name="password" type="password" value="">
                                 </div>
                                 <div class="checkbox">
-                                    <label>
-                                        <input name="remember" type="checkbox" value="Remember Me">Lembre de mim!
-                                    </label>
-                                    <a href="Recuperacao_de_senha.html">Nova Senha</a>
+                                
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <a href="index.html" class="btn btn-lg btn-success btn-block">Entre</a>
+                                <a href="login.html" class="btn btn-lg btn-success btn-block">Atualizar</a>
+                                
                             </fieldset>
                         </form>
                     </div>
@@ -68,23 +87,7 @@
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
-    
-        <script src="../dist/js/jquery.mask.min.js" type="text/javascript"></script>
-        <script src="../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-                    $("#login").validate({
-                        rules:{
-                            email:{
-                                required: true
-                            },
-                            senha:{
-                                required: true
-                            }
-                        }
-                    })
-        })
-    </script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -97,3 +100,4 @@
 </body>
 
 </html>
+
