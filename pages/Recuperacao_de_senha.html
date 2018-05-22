@@ -22,9 +22,13 @@
 
     <!-- Custom Fonts -->
     <link href="../vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
-    <script src="../dist/js/jquery.mask.min.js" type="text/javascript"></script>
-    <script src="../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../dist/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../dist/js/notify.min.js" type="text/javascript"></script>
+        <script src="../dist/js/jquery.mask.min.js" type="text/javascript"></script>
+        <script src="../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
+       
     <script type="text/javascript">
         $(document).ready(function () {
                     $("#new").validate({
@@ -39,15 +43,15 @@
                             novasenhaa:{
                                 required: true,
                                 minlenght: 8
-                            },
+                            }
                         },
                        
                         
-                        submitHandler: function (form) {
-                        $.notify("Senha Alterada com Sucesso!", "success")
+                        submitHandler: function () {
+                        $.notify("Senha Alterada com Sucesso!", "success");
                     }
-                    })
-        })
+                    });
+        });
     </script>
 </head>
 
