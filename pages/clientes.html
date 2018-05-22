@@ -30,7 +30,9 @@
             <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
         <!-- Validate Form -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="../dist/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../dist/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../dist/js/notify.min.js" type="text/javascript"></script>
         <script src="../dist/js/jquery.maskMoney.js" type="text/javascript"></script>
         <script src="../dist/js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
@@ -56,7 +58,7 @@
                         ecivil: {
                             required: true
                         },
-                        endereço: {
+                        endereco: {
                             required: true
                         },
                         numero: {
@@ -82,15 +84,17 @@
                             cpfBR: true
                         },
                         email: {
+                            required: true,
+                            validaEmail: true
+                        },
+                        profissao: {
                             required: true
                         },
                         renda: {
-                            required: true,
-                            number: true
+                            required: true
                         },
                         limite: {
-                            required: true,
-                            number: true
+                            required: true
                         },
                     },
                     submitHandler: function (form) {
@@ -99,6 +103,17 @@
                 })
             })
         </script>
+        <style type="text/css">
+            label.error{
+                color: red;
+            }
+            input.error{
+                border: 1px solid red;
+            }
+            .error{
+                font-size: 12px;
+            }
+        </style>
     </head>
 
     <body>
@@ -207,14 +222,15 @@
                                                 <div class="row">
                                                     <div class="col-md-8">
                                                         <div class="form-group">
-                                                            <label for="nome">Nome Completo:</label>
-                                                            <input type="text" class="form-control" id="nome">
+                                                            <label>Nome Completo:</label>
+                                                            <input name="nome" type="text" class="form-control" id="nome">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="sexo">Sexo:</label>
+                                                            <label>Sexo:</label>
                                                             <select name="sexo" class="form-control" id="sexo">
+                                                                <option value=""></option>
                                                                 <option value="masculino">Masculino</option>
                                                                 <option value="feminino">Feminino</option>
                                                             </select>
@@ -222,8 +238,9 @@
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="ecivil">Estado Civil:</label>
+                                                            <label>Estado Civil:</label>
                                                             <select name="ecivil" class="form-control" id="ecivil">
+                                                                <option value=""></option>
                                                                 <option value="solteiro">Solteiro(a)</option>
                                                                 <option value="casado">Casado(a)</option>
                                                             </select>
@@ -233,24 +250,24 @@
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="endereco">Endereço:</label>
-                                                            <input type="text" class="form-control" id="endereco">
+                                                            <label>Endereço:</label>
+                                                            <input name="endereco" type="text" class="form-control" id="endereco">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="numero">Número:</label>
-                                                            <input type="text" class="form-control" id="numero">
+                                                            <label>Número:</label>
+                                                            <input name="numero" type="text" class="form-control" id="numero">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="cidade">Cidade:</label>
-                                                            <input type="text" class="form-control" id="cidade">
+                                                            <label>Cidade:</label>
+                                                            <input name="cidade" type="text" class="form-control" id="cidade">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-1">
-                                                        <label for="uf">UF:</label>
+                                                        <label>UF:</label>
                                                         <select name="uf" class="form-control" id="uf">
                                                             <option value=""></option>
                                                             <option value="ac">AC</option>
@@ -286,46 +303,46 @@
                                                 <div class="row">
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="cpf">CPF:</label>
-                                                            <input type="text" class="form-control" id="cpf">
+                                                            <label>CPF:</label>
+                                                            <input name="cpf" type="text" class="form-control" id="cpf">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="telefone">Telefone:</label>
-                                                            <input type="text" class="form-control" id="telefone">
+                                                            <label>Telefone:</label>
+                                                            <input name="telefone" type="text" class="form-control" id="telefone">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-2">
                                                         <div class="form-group">
-                                                            <label for="celular">Celular:</label>
-                                                            <input type="text" class="form-control" id="celular">
+                                                            <label>Celular:</label>
+                                                            <input name="celular" type="text" class="form-control" id="celular">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-5">
                                                         <div class="form-group">
-                                                            <label for="email">E-mail:</label>
-                                                            <input type="text" class="form-control" id="email">
+                                                            <label>E-mail:</label>
+                                                            <input name="email" type="text" class="form-control" id="email">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="profissao">Profissão:</label>
-                                                            <input type="text" class="form-control" id="profissao">
+                                                            <label>Profissão:</label>
+                                                            <input name="profissao" type="text" class="form-control" id="profissao">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="renda">Renda Mensal:</label>
-                                                            <input type="text" class="form-control" id="renda">
+                                                            <label>Renda Mensal:</label>
+                                                            <input name="renda" type="text" class="form-control" id="renda">
                                                         </div>
                                                     </div>
                                                     <div class="col-md-3">
                                                         <div class="form-group">
-                                                            <label for="limite">Limite de Compra:</label>
-                                                            <input type="text" class="form-control" id="limite">
+                                                            <label>Limite de Compra:</label>
+                                                            <input name="limite" type="text" class="form-control" id="limite">
                                                         </div>
                                                     </div>
                                                 </div> <br /> 
@@ -489,12 +506,6 @@
             </div>
         </div>
         <!-- /#wrapper -->
-
-        <!-- jQuery -->
-        <script src="../vendor/jquery/jquery.min.js"></script>
-
-        <!-- Bootstrap Core JavaScript -->
-        <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
         <!-- Metis Menu Plugin JavaScript -->
         <script src="../vendor/metisMenu/metisMenu.min.js"></script>

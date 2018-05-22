@@ -54,5 +54,12 @@ $.validator.addMethod("cpfBR", function (value) {
     return false;
 
 }, "Por favor, especifique um número de CPF válido");
+jQuery.validator.addMethod("validaEmail", function (value, element) {
+    if (value.indexOf("@") >= 0) {
+        return true
+    } else {
+        return false
+    }
+}, "Digite um e-mail válido")
 
 
