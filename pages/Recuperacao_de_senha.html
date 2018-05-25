@@ -31,7 +31,7 @@
        
     <script type="text/javascript">
         $(document).ready(function () {
-                    $("#new").validate({
+                    $("#nova").validate({
                         rules:{
                             email:{
                                 required: true
@@ -65,24 +65,24 @@
                         <h3 class="panel-collapse">Mercadinho Santa Izabel</h3>
                     </div>
                     <div class="panel-body">
-                        <form role="form" id="new">
-                            <fieldset>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="E-mail" id="email" name="email" type="email" autofocus>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Nova Senha" id="novasenha" name="password" type="password" value="">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" placeholder="Digite Novamente a Senha" id="novasenhaa" name="password" type="password" value="">
-                                </div>
+                        <form role="form" id="nova">
+                            
+                                <label class="form-group">
+                                    <input class="form-control" placeholder="E-mail" id="email" name="email" type="email" >
+                                </label>
+                                <label class="form-group">
+                                    <input class="form-control" placeholder="Nova Senha" id="novasenha" name="password" type="password">
+                                </label>
+                                <label class="form-group">
+                                    <input class="form-control" placeholder="Digite Novamente a Senha" id="novasenhaa" name="password" type="password" >
+                                </label>
                                 <div class="checkbox">
                                 
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <a href="login.html" class="btn btn-lg btn-success btn-block">Atualizar</a>
                                 
-                            </fieldset>
+                            
                         </form>
                     </div>
                 </div>
