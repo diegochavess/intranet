@@ -135,40 +135,50 @@
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Dados da compra</h5>
+                                                <h3 class="modal-title" id="exampleModalLabel" >Dados da compra</h3>
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
-                                                    <div class="form-row">
-                                                        <div class="col-md-12">
-                                                            <div class="form-group">
-                                                                <label for="recipient-name" class="col-form-label">Empresa - Credor</label>            
-                                                                <input type="text" class="form-control" id="recipient-name">            
+                                                <article class="form-row">
+                                                    <div class="col-12">
+                                                        <form class="form-group" onsubmit="return validar()">
+                                                            <div class="form-row">
+                                                                <label>Empresa - Credor</label>
+                                                                <input type="text" class="form-control" name="empresa"/>
                                                             </div>
-                                                            <div class="form-group">
-                                                                <div class="col-md-6">
-                                                                    <div class="form-group">
-                                                                        <label for="message-text">Nº da Compra:</label>
-                                                                        <input class="form-control" id="message-text">                                                                        
-                                                                            <div class="col-md-6">
-                                                                                <div class="form-group">
-                                                                                    <label for="message-text">Valor da Compra:</label>
-                                                                                    <input class="form-control" id="message-text">
-                                                                                </div>
-                                                                            </div>                                                                        
-                                                                    </div>                                                                 
+                                                            <div class="row">
+                                                                <div class="col-lg-4">
+                                                                <label>Nº da Compra</label>
+                                                                <input type="number" name="ncompra" class="form-control"/>
+                                                                </div>
+                                                                <div class="col-lg-5">
+                                                                    <label>Tipo de Compra</label>
+                                                                    <input type="text" name="tipocompra" class="form-control"/>
+                                                                </div>
+                                                                <div class="col-lg-3">
+                                                                    <label>Valor da compra</label>
+                                                                    <input type="number" name="valorcompra" class="form-control"/>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-6">
+                                                                <label>Data da compra</label>
+                                                                <input type="date" name="datacompra" class="form-control"/>
+                                                                </div>
+                                                                <div class="col-lg-6">
+                                                                    <label>Data do vencimento</label>
+                                                                    <input type="date" name="vencecompra" class="form-control"/>
+                                                                </div>
+                                                            </div>
+                                                        </form>
                                                     </div>
-                                                </form>     
+                                                </article>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                                <button type="button" class="btn btn-primary">Enviar</button>
+                                                <button type="button" class="btn btn-primary">Salvar</button>
                                             </div>
                                         </div>
                                     </div>
