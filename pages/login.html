@@ -28,8 +28,6 @@
         <script src="../dist/js/jquery.mask.min.js" type="text/javascript"></script>
         <script src="../dist/js/validation/jquery.validate.min.js" type="text/javascript"></script>
         <script src="../dist/js/validation/localization/messages_pt_BR.js" type="text/javascript"></script>
-
-
         <script type="text/javascript">
             $(document).ready(function () {
                 $("#loginForm").validate({
@@ -39,11 +37,25 @@
                         },
                         senha: {
                             required: true
-                        }
+                        },
+                    },
+                      submitHandler: function (form) {
+                          
                     }
                 });
             });
         </script>
+        <style type="text/css">
+            label.error{
+                color: red;
+            }
+            input.error{
+                border: 1px solid red;
+            }
+            .error{
+                font-size: 12px;
+            }
+        </style>
     </head>
 
     <body>
@@ -62,7 +74,7 @@
                                         <input class="form-control" placeholder="E-mail" name="email" id="email" type="email" >
                                     </label>
                                     <label class="form-group">
-                                        <input class="form-control" placeholder="*******" id="senha" name="password" type="password" value=""> 
+                                        <input class="form-control" placeholder="*******" id="senha" name="senha" type="password"> 
                                     </label>
                                     
                                         <label>
@@ -71,7 +83,7 @@
                                         <a href="Recuperacao_de_senha.html">Nova Senha</a>
                                     
                                     <!-- Change this to a button or input when using this as a form -->
-                                    <a href="index.html" class="btn btn-lg btn-success btn-block">Entre</a>
+                                    <a href="index.html" class="btn btn-lg btn-success btn-block">Entrar</a>
                              
                             </form>
                         </div>
